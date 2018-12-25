@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>TheKrystalShip.Tools.Diagnostics</RootNamespace>
+    <AssemblyName>Diagnostics</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>TheKrystalShip.Tools.Diagnostics</PackageId>
+    <Product>TheKrystalShip.Tools.Diagnostics</Product>
+    <Authors>Heisenberg</Authors>
+    <Company>TheKrystalShip</Company>
+    <Copyright />
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageTags>diagnostics, benchmark</PackageTags>
+    <RepositoryType>GIT</RepositoryType>
+    <RepositoryUrl>https://github.com/TheKrystalShip/Tools.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/TheKrystalShip/Tools</PackageProjectUrl>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Description>Small utilitary library for benchmarking code execution time.</Description>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>
