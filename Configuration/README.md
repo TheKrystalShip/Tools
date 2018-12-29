@@ -1,6 +1,6 @@
 # TheKrystalShip.Tools.Configuration
 
-This library is a static wrapper around `Microsoft.Extensions.IConfiguration`, exposing exisitng methods thourhg a static `Configuration` class.
+This library is a static wrapper around `Microsoft.Extensions.IConfiguration`, exposing exisitng methods through a static `Configuration` class.
 
 # Usage
 
