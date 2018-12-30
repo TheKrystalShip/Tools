@@ -41,7 +41,7 @@ namespace TheKrystalShip.Tools.Configuration
 
             foreach (string file in files)
             {
-                if (!File.Exists(file))
+                if (!File.Exists(Path.Combine(_basePath, file)))
                     throw new FileNotFoundException("File not found", file);
 
                 configurationBuilder.AddJsonFile(path: file, optional: true, reloadOnChange: true);

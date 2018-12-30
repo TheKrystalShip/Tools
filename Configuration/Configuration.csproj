@@ -15,6 +15,7 @@
     <RepositoryUrl>https://github.com/TheKrystalShip/Tools.git</RepositoryUrl>
     <Description>A static wrapper around Microsoft.Extensions.IConfiguration</Description>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
