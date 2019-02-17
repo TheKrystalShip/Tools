@@ -14,8 +14,12 @@
     <PackageProjectUrl>https://github.com/TheKrystalShip/Tools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TheKrystalShip/Tools.git</RepositoryUrl>
     <Description>A static wrapper around Microsoft.Extensions.IConfiguration</Description>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Added ConfigurationFile class to allow per-file path, optional and reloadOnChange properties.
+Added a couple method overloads to Configuration.AddFiles(); that use either an array or a IEnumerable&lt;&gt; of ConfigurationFile.
+Added single Configuration.AddFile(); method accepting a ConfigurationFile instance.</PackageReleaseNotes>
+    <Version>1.0.2</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Heisenberg.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

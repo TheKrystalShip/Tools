@@ -3,6 +3,7 @@ using Microsoft.Extensions.Primitives;
 
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace TheKrystalShip.Tools.Configuration
 {
@@ -30,6 +31,24 @@ namespace TheKrystalShip.Tools.Configuration
         }
 
         /// <summary>
+        /// Add a configuration file
+        /// </summary>
+        /// <param name="files">Configuration file to add</param>
+        /// <exception cref="FileNotFoundException"></exception>
+        public static void AddFile(ConfigurationFile file)
+        {
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(_basePath);
+
+            if (!File.Exists(Path.Combine(_basePath, file.Path)))
+                throw new FileNotFoundException("File not found", file.Path);
+
+            configurationBuilder.AddJsonFile(path: file.Path, optional: file.Optional, reloadOnChange: file.ReloadOnChange);
+
+            _config = configurationBuilder.Build();
+        }
+
+        /// <summary>
         /// Add configuration files
         /// </summary>
         /// <param name="files">Collection of configuration files to add</param>
@@ -48,6 +67,37 @@ namespace TheKrystalShip.Tools.Configuration
             }
 
             _config = configurationBuilder.Build();
+        }
+
+        /// <summary>
+        /// Add configuration files
+        /// </summary>
+        /// <param name="files">Collection of configuration files to add</param>
+        /// <exception cref="FileNotFoundException"></exception>
+        public static void AddFiles(params ConfigurationFile[] files)
+        {
+            ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
+            configurationBuilder.SetBasePath(_basePath);
+
+            foreach (ConfigurationFile file in files)
+            {
+                if (!File.Exists(Path.Combine(_basePath, file.Path)))
+                    throw new FileNotFoundException("File not found", file.Path);
+
+                configurationBuilder.AddJsonFile(path: file.Path, optional: file.Optional, reloadOnChange: file.ReloadOnChange);
+            }
+
+            _config = configurationBuilder.Build();
+        }
+
+        /// <summary>
+        /// Add configuration files
+        /// </summary>
+        /// <param name="files">Collection of configuration files to add</param>
+        /// <exception cref="FileNotFoundException"></exception>
+        public static void AddFiles(IEnumerable<ConfigurationFile> files)
+        {
+            AddFiles(files.ToArray());
         }
 
         /// <summary>
